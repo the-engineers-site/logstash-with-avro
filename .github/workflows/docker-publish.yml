@@ -7,7 +7,7 @@ on:
 
 env:
   IMAGE_NAME: logstash-with-avro
-  REGISTRY_NAME: docker.pkg.github.com
+  REGISTRY_NAME: ghcr.io
   DOCKERFILE_PATH: ./Dockerfile
 
 jobs:
