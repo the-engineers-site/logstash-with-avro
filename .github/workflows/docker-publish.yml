@@ -25,7 +25,7 @@ jobs:
         uses: docker/setup-buildx-action@v2        
       
       - name: Build and tag Docker image
-        run: docker build -t $IMAGE_NAME:latest -f $DOCKERFILE_PATH .
+        run: docker build -t ${{ env.REGISTRY_NAME }}/${{ github.repository }}:latest -f $DOCKERFILE_PATH .
 
       - name: Log in to GitHub Container Registry
         run: echo ${{ secrets.GITHUB_TOKEN }} | docker login ${{ env.REGISTRY_NAME }} -u ${{ github.actor }} --password-stdin
